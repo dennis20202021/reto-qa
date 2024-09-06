@@ -6,8 +6,7 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.page.TheWebPage;
-import starter.navigation.NavigateTo;
-import starter.search.LookForInformation;
+import starter.task.*;
 
 public class SearchStepDefinitions {
 

@@ -18,7 +18,7 @@ src
     + java                        Test runners and supporting code
     + resources
       + features                  Feature files
-     + search                  Feature file subdirectories 
+    + search                  Feature file subdirectories
              search_by_keyword.feature
 ```
 
@@ -197,7 +197,12 @@ $ mvn clean verify -Ddriver=firefox
 ```
 Or
 ```json
-$ gradle clean test -Pdriver=firefox
+$ ./gradlew clean test -Pdriver=firefox
+```
+
+And build the project:
+```json
+./gradlew clean build --refresh-dependencies
 ```
 
 The test results will be recorded in the `target/site/serenity` directory.
