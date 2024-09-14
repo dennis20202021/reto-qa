@@ -1,3 +1,4 @@
+@regression
 Feature: Search by keyword
 
   @green
