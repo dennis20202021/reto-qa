@@ -13,7 +13,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "net.serenity-bdd:serenity-gradle-plugin:3.9.8"
+        classpath "net.serenity-bdd:serenity-gradle-plugin:4.0.8"
     }
 }
 
@@ -27,10 +27,12 @@ sourceCompatibility = 11
 targetCompatibility = 11
 
 ext {
-    serenity_version = '3.9.4'
+    serenity_version = '4.0.8'
     junit_version = '4.13.1'
     assertj_core_version = '3.23.1'
-    logback_version = '1.2.10'
+    log4j_version = '2.20.0'
+    slf4j_simple_version = '2.0.7'
+    webdriver_manager_version = '5.4.1'
 }
 
 dependencies {
@@ -41,7 +43,9 @@ dependencies {
             "net.serenity-bdd:serenity-screenplay-webdriver:${serenity_version}",
             "net.serenity-bdd:serenity-ensure:${serenity_version}",
             "junit:junit:${junit_version}",
-            "ch.qos.logback:logback-classic:${logback_version}",
+            "io.github.bonigarcia:webdrivermanager:${webdriver_manager_version}",
+            "org.apache.logging.log4j:log4j-core:${log4j_version}",
+            "org.slf4j:slf4j-simple:${slf4j_simple_version}",
             "org.assertj:assertj-core:${assertj_core_version}"
     )
 }
@@ -59,6 +63,8 @@ tasks.named('test') {
 }
 
 serenity {
+    // Generate Serenity reports
+    reports = ["single-page-html", "navigator"]
     // Specify the root package of any JUnit acceptance tests
     testRoot = "org.demo.qa"
     // Specify the root directory of any Cucumber feature files
