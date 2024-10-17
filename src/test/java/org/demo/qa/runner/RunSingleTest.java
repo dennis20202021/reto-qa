@@ -14,6 +14,6 @@ import org.junit.runner.RunWith;
         },
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         glue = { "org.demo.qa.stepdefinitions" },
-        tags = "@green" // Specify your tags here
+        tags = "@scenario_one" // Specify your tags here
 )
 public class RunSingleTest {}
